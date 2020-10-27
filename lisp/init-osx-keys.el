@@ -3,8 +3,8 @@
 ;;; Code:
 
 (when *is-a-mac*
-  (setq mac-command-modifier 'meta)
-  (setq mac-option-modifier 'none)
+  (setq mac-command-modifier 'super)
+  (setq mac-option-modifier 'meta)
   ;; Make mouse wheel / trackpad scrolling less jerky
   (setq mouse-wheel-scroll-amount '(1
                                     ((shift) . 5)
@@ -18,6 +18,10 @@
   (with-eval-after-load 'nxml-mode
     (define-key nxml-mode-map (kbd "M-h") nil))
   (global-set-key (kbd "M-ˍ") 'ns-do-hide-others) ;; what describe-key reports for cmd-option-h
+
+  ;; rbshi
+  (global-set-key (kbd "s-s") 'save-buffer)
+
   )
 
 

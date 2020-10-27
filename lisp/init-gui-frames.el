@@ -81,6 +81,13 @@
 (add-hook 'after-init-hook 'default-text-scale-mode)
 
 
+;; Set default font
+(set-face-attribute 'default nil
+                    :family "Menlo"
+                    :height 140
+                    :weight 'medium
+                    :width 'medium)
+
 
 (require-package 'disable-mouse)
 
