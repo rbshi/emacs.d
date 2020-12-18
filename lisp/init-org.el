@@ -263,6 +263,14 @@ typical word processor."
 
 (add-hook 'org-agenda-mode-hook 'hl-line-mode)
 
+
+(setq org-file-apps
+      '((auto-mode . emacs)
+        ("\\.png\\'" . "open \"%s\"")
+        ("\\.pdf\\'" . "open \"%s\"")
+        ("\\.pdf\\'" . "open \"%s\"")))
+
+
 
 ;;; Org clock
 

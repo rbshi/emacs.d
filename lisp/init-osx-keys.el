@@ -21,6 +21,8 @@
 
   ;; rbshi
   (global-set-key (kbd "s-s") 'save-buffer)
+  (global-set-key (kbd "<home>") 'beginning-of-line)
+  (global-set-key (kbd "<end>") 'end-of-line)
 
   )
 

@@ -83,6 +83,13 @@
 (require 'init-github)
 
 (require 'init-projectile)
+(require 'init-ocaml)
+(require 'init-bsv)
+
+(autoload 'bsv-mode "bsv-mode" "BSV mode" t )
+(setq auto-mode-alist (cons  '("\\.bsv\\'" . bsv-mode) auto-mode-alist))
+
+
 
 ;; (require 'init-compile)
 ;; (require 'init-crontab)
@@ -92,7 +99,7 @@
 ;; (require 'init-erlang)
 ;; (require 'init-javascript)
 ;; (require 'init-php)
-;; (require 'init-org)
+(require 'init-org)
 ;; (require 'init-nxml)
 ;; (require 'init-html)
 ;; (require 'init-css)
@@ -146,7 +153,7 @@
 (maybe-require-package 'shfmt)
 
 (when (maybe-require-package 'uptimes)
-  (setq-default uptimes-keep-count 200)
+  (setq-default uptimEs-keep-count 200)
   (add-hook 'after-init-hook (lambda () (require 'uptimes))))
 
 (when (fboundp 'global-eldoc-mode)
