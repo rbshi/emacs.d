@@ -1,4 +1,4 @@
-;;; init-org.el --- Org-mode config -*- lexical-binding: t -*-
+;;; init-org.el --- Org-mode config -*- lexical-bindng: t -*-
 ;;; Commentary:
 
 ;; Among settings for many aspects of `org-mode', this code includes
@@ -29,6 +29,7 @@
 
 (define-key global-map (kbd "C-c l") 'org-store-link)
 (define-key global-map (kbd "C-c a") 'org-agenda)
+
 
 (defvar sanityinc/org-global-prefix-map (make-sparse-keymap)
   "A keymap for handy global access to org helpers, particularly clocking.")
@@ -263,12 +264,27 @@ typical word processor."
 
 (add-hook 'org-agenda-mode-hook 'hl-line-mode)
 
-
+;; rbshi
+;; open file with external app
 (setq org-file-apps
       '((auto-mode . emacs)
         ("\\.png\\'" . "open \"%s\"")
         ("\\.pdf\\'" . "open \"%s\"")
         ("\\.pdf\\'" . "open \"%s\"")))
+
+;; publish all .org files to html
+(defun publish-dir-org ()
+  "Publish all org files in a directory"
+  (interactive)
+  (save-excursion
+    (mapc
+     (lambda (file)
+       (with-current-buffer
+       (find-file-noselect file)
+     (org-export-as-html-batch)))
+       (file-expand-wildcards  "*.org"))))
+
+
 
 
 
@@ -387,6 +403,11 @@ typical word processor."
      (,(if (locate-library "ob-sh") 'sh 'shell) . t)
      (sql . t)
      (sqlite . t))))
+
+
+;; (define-key org-mode-map (kbd "M-<left>") 'left-word)
+;; (define-key org-mode-map (kbd "M-<right>") 'right-word)
+;; (setq org-format-latex-options (plist-put org-format-latex-options :scale 1.7))
 
 
 (provide 'init-org)

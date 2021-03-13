@@ -80,15 +80,14 @@
 (require 'init-vc)
 (require 'init-darcs)
 (require 'init-git)
-(require 'init-github)
+;; (require 'init-github)
 
-(require 'init-projectile)
-(require 'init-ocaml)
+;; (require 'init-projectile)
+;; (require 'init-ocaml)
 (require 'init-bsv)
 
 (autoload 'bsv-mode "bsv-mode" "BSV mode" t )
 (setq auto-mode-alist (cons  '("\\.bsv\\'" . bsv-mode) auto-mode-alist))
-
 
 
 ;; (require 'init-compile)
@@ -115,7 +114,7 @@
 ;; (require 'init-nim)
 ;; (require 'init-rust)
 ;; (require 'init-toml)
-;; (require 'init-yaml)
+(require 'init-yaml)
 ;; (require 'init-docker)
 ;; (require 'init-terraform)
 ;; (require 'init-nix)

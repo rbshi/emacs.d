@@ -23,6 +23,12 @@
   (global-set-key (kbd "s-s") 'save-buffer)
   (global-set-key (kbd "<home>") 'beginning-of-line)
   (global-set-key (kbd "<end>") 'end-of-line)
+  (global-set-key (kbd "M-<left>") 'left-word)
+  (global-set-key (kbd "M-<right>") 'right-word)
+  (global-set-key (kbd "s-<left>") 'windmove-left)
+  (global-set-key (kbd "s-<right>") 'windmove-right)
+  (global-set-key (kbd "s-<up>") 'windmove-up)
+  (global-set-key (kbd "s-<down>") 'windmove-down)
 
   )
 
